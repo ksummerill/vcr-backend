@@ -25,6 +25,7 @@
 
 # Ignore uploaded files in development.
 /storage/*
+/storage/development_secret.txt
 !/storage/.keep
 .byebug_history
 
