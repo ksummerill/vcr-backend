@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-ProjectPlan.create(name: "Ruthie")
+Project.create(name: "Ruthie")
 
 Inventory.create(name: "Indoor", description: "All items inside the camper", project_plan_id: 1)
 Inventory.create(name: "Metal Siding", description: "Items related to metal skins", project_plan_id: 1)
