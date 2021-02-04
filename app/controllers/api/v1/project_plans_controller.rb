@@ -3,7 +3,7 @@ class Api::V1::ProjectPlansController < ApplicationController
   def index
       project_plans = ProjectPlan.all
 
-      render json: ProjectPlanSerializer.new(project_plans)
+      render json: @project_plans
     end
 
     def create
