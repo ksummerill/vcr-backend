@@ -1,4 +1,4 @@
 class InventorySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :description, :project_plan_id
+  attributes :name, :description, :project_id
 end
