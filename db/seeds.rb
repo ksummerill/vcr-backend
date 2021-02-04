@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Project.create(name: "Ruthie")
 
-Inventory.create(name: "Indoor", description: "All items inside the camper", project_plan_id: 1)
-Inventory.create(name: "Metal Siding", description: "Items related to metal skins", project_plan_id: 1)
+Inventory.create(name: "Indoor", description: "All items inside the camper", project_id: 1)
+Inventory.create(name: "Metal Siding", description: "Items related to metal skins", project_id: 1)
 
-Supply.create(item: "Wood", project_plan_id: 1)
-Supply.create(item: "Clamps", project_plan_id: 1)
+Supply.create(item: "Wood", project_id: 1)
+Supply.create(item: "Clamps", project_id: 1)
