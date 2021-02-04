@@ -8,7 +8,7 @@ class Api::V1::ProjectsController < ApplicationController
 
   def create
     project = Project.new(project_params)
-    if project_plan.save
+    if project.save
       render json: ProjectSerializer.new(projects), status: :accepted
     else
       render json: {errors: project.errors.full_messages}, status: :unprocessible_entity
