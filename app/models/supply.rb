@@ -1,3 +1,3 @@
 class Supply < ApplicationRecord
-  belongs_to :project_plan
+  belongs_to :project
 end

@@ -8,6 +8,6 @@ class Api::V1::InventoriesController < ApplicationController
   private
 
   def inventory_params
-    params.require(:inventory).permit(:name, :description, :project_plan_id)
+    params.require(:inventory).permit(:name, :description, :project_id)
   end
 end

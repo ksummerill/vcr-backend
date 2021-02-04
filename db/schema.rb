@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_221741) do
+ActiveRecord::Schema.define(version: 2021_02_04_012230) do
 
   create_table "inventories", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "project_plan_id"
+    t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_plan_id"], name: "index_inventories_on_project_plan_id"
+    t.index ["project_id"], name: "index_inventories_on_project_id"
   end
 
-  create_table "project_plans", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 2021_01_24_221741) do
 
   create_table "supplies", force: :cascade do |t|
     t.string "item"
-    t.integer "project_plan_id"
+    t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_plan_id"], name: "index_supplies_on_project_plan_id"
+    t.index ["project_id"], name: "index_supplies_on_project_id"
   end
 
-  add_foreign_key "inventories", "project_plans"
-  add_foreign_key "supplies", "project_plans"
+  add_foreign_key "inventories", "projects"
+  add_foreign_key "supplies", "projects"
 end
