@@ -1,9 +1,9 @@
 class Api::V1::SuppliesController < ApplicationController
 
   def index
-    @supplies = Supply.all
+    supplies = Supply.all
 
-    render json: @supplies
+    render json: SupplySerializer.new(supplies)
   end
 
   private

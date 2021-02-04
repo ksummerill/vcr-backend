@@ -1,8 +1,8 @@
 class Api::V1::InventoriesController < ApplicationController
   def index
-    @inventories = Inventory.all
+    inventories = Inventory.all
 
-    render json: @inventories
+    render json: InventorySerializer.new(inventories)
   end
 
   private
