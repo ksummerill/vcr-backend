@@ -15,6 +15,10 @@ class Api::V1::ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project.destroy
+  end
+
   private
 
   def project_params

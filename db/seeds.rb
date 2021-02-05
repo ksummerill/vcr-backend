@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Project.create(name: "Ruthie")
+ruthie = Project.create(name: "Ruthie")
 
-Inventory.create(name: "Indoor", description: "All items inside the camper", project_id: 1)
-Inventory.create(name: "Metal Siding", description: "Items related to metal skins", project_id: 1)
+Inventory.create(name: "Indoor", description: "All items inside the camper", project_id: ruthie.id)
+Inventory.create(name: "Metal Siding", description: "Items related to metal skins", project_id: ruthie.id)
 
-Supply.create(item: "Wood", project_id: 1)
-Supply.create(item: "Clamps", project_id: 1)
+Supply.create(item: "Wood", project_id: ruthie.id)
+Supply.create(item: "Clamps", project_id: ruthie.id)
