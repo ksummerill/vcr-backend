@@ -2,8 +2,21 @@ class Api::V1::SuppliesController < ApplicationController
 
   def index
     supplies = Supply.all
-
     render json: SupplySerializer.new(supplies)
+  end
+
+  def create
+    supply = Supply.new(supply_params)
+    if supply.save
+      render json: SupplySerializer.new(inventories), status: :accepted
+    else
+      render json: {errors: supply.errors.full_messages}, status: :unprocessible_entity
+    end
+  end
+
+  def destroy
+    supply = Supply.find(params[:id])
+    supply.destroy
   end
 
   private
