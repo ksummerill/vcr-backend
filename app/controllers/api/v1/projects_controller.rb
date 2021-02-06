@@ -15,6 +15,11 @@ class Api::V1::ProjectsController < ApplicationController
     end
   end
 
+  def show
+    project = Project.find(params[:id])
+    render json: project
+  end
+
   def destroy
     project = Project.find(params[:id])
     project.destroy
