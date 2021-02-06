@@ -16,7 +16,8 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy
+    project = Project.find(params[:id])
+    project.destroy
   end
 
   private
