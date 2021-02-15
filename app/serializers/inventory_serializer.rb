@@ -1,4 +1,5 @@
-class InventorySerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :name, :description, :project_id, :project
+class InventorySerializer < ActiveModel::Serializer
+  attributes :name, :description, :project_id
+
+  belongs_to :project
 end
