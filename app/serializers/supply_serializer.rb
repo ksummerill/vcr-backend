@@ -1,4 +1,5 @@
-class SupplySerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :item, :project_id, :project
+class SupplySerializer < ActiveModel::Serializer
+  attributes :item, :project_id
+
+  belongs_to :project
 end
