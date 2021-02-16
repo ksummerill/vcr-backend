@@ -1,13 +1,13 @@
 class Api::V1::InventoriesController < ApplicationController
   def index
     inventories = Inventory.all
-    render json: InventorySerializer.new(inventories)
+    render json: inventories
   end
 
   def create
     inventory = Inventory.new(inventory_params)
     if inventory.save
-      render json: InventorySerializer.new(inventories), status: :accepted
+      render json: inventory, status: :accepted
     else
       render json: {errors: inventory.errors.full_messages}, status: :unprocessible_entity
     end
