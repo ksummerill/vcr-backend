@@ -5,11 +5,12 @@ class Api::V1::InventoriesController < ApplicationController
   end
 
   def create
-    inventory = Inventory.new(inventory_params)
-    if inventory.save
-      render json: inventory, status: :accepted
+    @inventory = Inventory.new(inventory_params)
+
+    if @inventory.save
+      render json: @inventory, status: :accepted
     else
-      render json: {errors: inventory.errors.full_messages}, status: :unprocessible_entity
+      render json: {errors: @inventory.errors.full_messages}, status: :unprocessible_entity
     end
   end
 
@@ -33,6 +34,6 @@ class Api::V1::InventoriesController < ApplicationController
   private
 
   def inventory_params
-    params.require(:inventory).permit(:name, :description, :inventory_id)
+    params.require(:inventory).permit(:name, :description, :inventory_id, :project_id)
   end
 end

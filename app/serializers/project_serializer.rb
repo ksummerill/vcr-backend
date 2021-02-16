@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :name
+  attributes :id, :name
 
   has_many :inventories
   has_many :supplies
