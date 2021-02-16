@@ -1,4 +1,4 @@
 class Project < ApplicationRecord
   has_many :supplies
-  has_one :inventory
+  has_many :inventories
 end
