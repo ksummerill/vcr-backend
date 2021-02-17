@@ -30,9 +30,11 @@ class Api::V1::InventoriesController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    # inventory = Inventory.find(params[:id])
-    # inventory.destroy
+    # binding.pry
+    inventory = Inventory.find(params["id"])
+    project = Project.find(inventory.project_id)
+    inventory.destroy
+    render json: project
   end
 
   private
