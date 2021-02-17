@@ -1,16 +1,18 @@
 class Api::V1::SuppliesController < ApplicationController
 
+  before_action :find_project
+
   def index
     supplies = Supply.all
     render json: supplies
   end
 
   def create
-    supply = Supply.new(supply_params)
-    if supply.save
-      render json: supply, status: :accepted
+    @supply = @project.supplies.new(supply_params)
+    if @supply.save
+      render json: @project, status: :accepted
     else
-      render json: {errors: supply.errors.full_messages}, status: :unprocessible_entity
+      render json: {errors: @supply.errors.full_messages}, status: :unprocessible_entity
     end
   end
 
@@ -20,6 +22,10 @@ class Api::V1::SuppliesController < ApplicationController
   end
 
   private
+
+  def find_project
+    @project = Project.find(params[:project_id])
+  end
 
   def supply_params
     params.require(:supply).permit(:item, :project_id)
