@@ -30,8 +30,9 @@ class Api::V1::InventoriesController < ApplicationController
   end
 
   def destroy
-    inventory = Inventory.find(params[:id])
-    inventory.destroy
+    binding.pry
+    # inventory = Inventory.find(params[:id])
+    # inventory.destroy
   end
 
   private
