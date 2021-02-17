@@ -1,5 +1,5 @@
 class SupplySerializer < ActiveModel::Serializer
-  attributes :item, :project_id
+  attributes :id, :item, :project_id
 
   belongs_to :project
 end
