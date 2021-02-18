@@ -17,8 +17,10 @@ class Api::V1::SuppliesController < ApplicationController
   end
 
   def destroy
-    supply = Supply.find(params[:id])
+    supply = Supply.find(params["id"])
+    project = Project.find(supply.project_id)
     supply.destroy
+    render json: project
   end
 
   private
