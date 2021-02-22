@@ -18,14 +18,8 @@ class Api::V1::InventoriesController < ApplicationController
   end
 
   def show
-    inventory = Inventory.find(params[:id])
-    render json: inventory
-  end
-
-  def update
-    inventory = Inventory.find(params[:id])
-    inventory.update(name: params["inventory"]["name"], description: params["inventory"]["description"])
-    inventory.save
+    inventory = Inventory.find(params["id"])
+    project = Project.find(inventory.project_id)
     render json: inventory
   end
 
