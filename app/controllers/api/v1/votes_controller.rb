@@ -2,7 +2,13 @@ class Api::V1::VotesController < ApplicationController
 
   before_action :find_project
 
+  def index
+    votes = Vote.all
+    render json: votes
+  end
+
   def create
+    binding.pry
     @vote = @project.votes.new(vote_params)
     if @vote.save
       render json: @project, status: :accepted
