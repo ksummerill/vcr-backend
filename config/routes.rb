@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :projects do
         resources :inventories
         resources :supplies
+        resources :votes
       end
     end
   end
