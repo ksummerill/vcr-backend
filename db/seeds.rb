@@ -12,5 +12,3 @@ Inventory.create(name: "Metal Siding", description: "Items related to metal skin
 
 Supply.create(item: "Wood", project_id: ruthie.id)
 Supply.create(item: "Clamps", project_id: ruthie.id)
-
-Vote.create(count: 3, project_id: ruthie.id)

@@ -3,5 +3,6 @@ class ProjectSerializer < ActiveModel::Serializer
 
   has_many :inventories
   has_many :supplies
+  has_many :votes
 
 end

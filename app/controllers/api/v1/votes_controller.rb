@@ -8,7 +8,6 @@ class Api::V1::VotesController < ApplicationController
   end
 
   def create
-    binding.pry
     @vote = @project.votes.new(vote_params)
     if @vote.save
       render json: @project, status: :accepted
@@ -24,6 +23,6 @@ class Api::V1::VotesController < ApplicationController
   end
 
   def vote_params
-    params.require(:vote).permit(:count, :project_id)
+    params.permit(:vote)
   end
 end
